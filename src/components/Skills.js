@@ -45,17 +45,16 @@ const Skills = () => {
         <Skill name="CATIA" x="-20vw" y="2vw" />
 
         <Skill name="Project Management" x="-5vw" y="-10vw" />
-        <Skill name="Computational Fluid Dynamics (CFD)" x="20vw" y="6vw" />
+        <Skill name="CFD" x="20vw" y="6vw" />
         <Skill name="Product Development" x="0vw" y="12vw" />
         <Skill
-          name="Customer Relationship Management (CRM)"
+          name="CRM"
           x="-20vw"
           y="-15vw"
         />
-        <Skill name="Rapid Prototyping" x="15vw" y="-12vw" />
-        <Skill name="Business-to-Business (B2B)" x="-35vw" y="-5vw" />
+        <Skill name="B2B" x="-35vw" y="-5vw" />
         <Skill name="B2G" x="32vw" y="-5vw" />
-        <Skill name="Research and Development (R&D)" x="0vw" y="-20vw" />
+        <Skill name="Research and Development" x="0vw" y="-20vw" />
         <Skill name="Bid Management" x="-25vw" y="18vw" />
         <Skill name="Technology Transfer" x="28vw" y="18vw" />
       </div>

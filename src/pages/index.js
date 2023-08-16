@@ -34,12 +34,12 @@ export default function Home() {
             </div>
             <div className="w-1/2 flex flex-col items-center self-center lg:w-full lg:text-center">
               <AnimatedText
-                text="A drone maven's precision, an animal lover's heart, and the unwavering strength of an independent soul."
+                text="A drone maven's precision, an animal lover's heart"
                 className="!text-4xl !text-left 
-                xl:!text-5xl lg:!text-center lg:!text=6xl md:!text-5xl sm:!text-3xl
+                xl:!text-5xl lg:!text-left lg:!text=6xl md:!text-5xl sm:!text-3xl
                 "
               />
-              <p className="my-4 text-base font-medium md:text-sm sm:text-xs">
+              <p className="my-4 text-base lg:!text-left font-medium md:text-sm sm:text-xs">
                 Accomplished Aerospace Engineer, UAV Test Pilot, and
                 compassionate advocate, shaping skies and souls. 4+ years
                 designing, navigating regulations, and fostering innovation,
