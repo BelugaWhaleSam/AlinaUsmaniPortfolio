@@ -124,7 +124,7 @@ const Project = ({ title, img, link }) => {
   );
 };
 
-const projects = () => {
+const Projects = () => {
   const { data: droneData, error: droneError } = useSWR('api/drone', fetcher);
   const { data: meetData, error: meetError } = useSWR('api/droneMeet', fetcher);
 
@@ -183,4 +183,4 @@ const projects = () => {
   );
 };
 
-export default projects;
+export default Projects;
