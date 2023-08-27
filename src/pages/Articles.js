@@ -53,6 +53,75 @@ const MovingImg = ({ title, img, link }) => {
   );
 };
 
+const FeaturedProject = ({ title, summary, img, detail, time }) => {
+  const [openModal, setOpenModal] = useState(undefined);
+  const props = { openModal, setOpenModal };
+  return (
+    <article
+      className="w-full flex items-center justify-between relative  rounded-br-2xl
+        rounded-3xl border border-solid border-dark bg-light shadow-2xl p-12 dark:bg-dark dark:border-light
+        lg:flex-col lg:p-8 xs:rounded-2xl xs:rounded-br-3xl xs:p-4 mt-8"
+    >
+      <div
+        className="absolute top-0 -right-3 -z-10 w-[101%] h-[103%] rounded-[2.5rem] bg-dark dark:bg-light
+        rounded-br-3xl xs:-right-2 sm:h-[102%] xs:w-full xs:rounded-[1.5rem]
+      "
+      />
+
+      <FramerImage
+        src={img}
+        alt={title}
+        width={600}
+        height={200}
+        whileHover={{ scale: 1.05 }}
+        transition={{ duration: 0.2 }}
+        priority
+        sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              50vw"
+      />
+
+      <div className="w-1/2 flex flex-col items-start justify-between pl-6 lg:w-full lg:pl-0 lg:pt-6">
+        <h2 className="my-2 w-full text-left text-4xl font-bold dark:text-light lg:text-3xl xs:text-2xl">
+          {title}
+        </h2>
+
+        <p className="my-2 font-medium text-dark dark:text-light sm:text-sm">
+          {summary}
+        </p>
+        <span className="text-primary font-semibold dark:text-primaryDark">
+          {time}
+          <Button
+            className="mt-2"
+            onClick={() => props.setOpenModal("dismissible")}
+          >
+            Read More
+          </Button>
+          <Modal
+            dismissible
+            show={props.openModal === "dismissible"}
+            onClose={() => props.setOpenModal(undefined)}
+          >
+            <Modal.Header>{title}</Modal.Header>
+            <Modal.Body>
+              <div className="space-y-6">
+                <p className=" text-base leading-relaxed text-gray-600 dark:text-gray-400">
+                  {detail}
+                </p>
+              </div>
+            </Modal.Body>
+            <Modal.Footer>
+              <Button onClick={() => props.setOpenModal(undefined)}>
+                Close
+              </Button>
+            </Modal.Footer>
+          </Modal>
+        </span>
+      </div>
+    </article>
+  );
+};
+
 const FeaturedArticle = ({ title, img, detail, summary, time }) => {
   const [openModal, setOpenModal] = useState(undefined);
   const props = { openModal, setOpenModal };
@@ -179,22 +248,24 @@ const Articles = () => {
           <h2 className="font-bold text-3xl w-full text-center my-16 mt-8">
             Animal Stories and Articles
           </h2>
-          <ul className="grid grid-cols-2 gap-16 lg:gap-8 md:grid-cols-1 md:gap-y-16">
-            {mappedanimalstory.map((animal) => (
-              <FeaturedArticle
-                key={animal.id}
-                title={animal.title}
-                summary={animal.summary}
-                img={animal.img}
-                detail={animal.detail}
-                time={animal.time}
-              />
-            ))}
-          </ul>
+          <div className="grid grid-cols-12 gap-24 gap-y-32 xl:gap-x-16 lg:gap-x-8 md:gap-y-24 sm:gap-x-0">
+            <div className="col-span-12">
+              {mappedanimalstory.map((animal) => (
+                <FeaturedProject
+                  key={animal.id}
+                  title={animal.title}
+                  summary={animal.summary}
+                  img={animal.img}
+                  detail={animal.detail}
+                  time={animal.time}
+                />
+              ))}
+            </div>
+          </div>
           <h2 className="font-bold text-3xl w-full text-center my-16 mt-32">
             Message from animal communications
           </h2>
-          <ul className="grid grid-cols-2 gap-16 lg:gap-8 md:grid-cols-1 md:gap-y-16">
+          <ul className="grid grid-cols-2 gap-16 lg:gap-8 md:grid-cols-1 md:gap-y-8">
             {mappedanimalmessage.map((animal) => (
               <FeaturedArticle
                 key={animal.id}
