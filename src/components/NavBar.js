@@ -104,7 +104,7 @@ const NavBar = () => {
           <CustomLink href="/" title="Home" className="mr-4" />
           <CustomLink href="/about" title="About" className="mx-4" />
           <CustomLink href="/DroneMaven" title="DroneMaven" className="mx-4" />
-          <CustomLink href="/articles" title="Mercy" className="ml-4" />
+          <CustomLink href="/Articles" title="Mercy" className="ml-4" />
         </nav>
 
         <nav className="flex items-center justify-center flex-wrap">
@@ -179,7 +179,7 @@ const NavBar = () => {
               toggle={handleClick}
             />
             <CustomMobileLink
-              href="/articles"
+              href="/Articles"
               title="Mercy"
               className=""
               toggle={handleClick}

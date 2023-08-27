@@ -117,7 +117,7 @@ const FeaturedArticle = ({ title, img, detail, summary, time }) => {
   );
 };
 
-const articles = () => {
+const Articles = () => {
   const { data: animalstory, error: animalstoryError } = useSWR(
     "api/animalstory",
     fetcher
@@ -211,4 +211,4 @@ const articles = () => {
   );
 };
 
-export default articles;
+export default Articles;
