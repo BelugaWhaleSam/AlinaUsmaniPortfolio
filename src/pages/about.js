@@ -65,7 +65,7 @@ const about = () => {
               </p>
 
               <p className="my-4 font-medium">
-                Beyond technical proficiency, I`&apos;`m an Animal Activist and Animal
+                Beyond technical proficiency, I&apos;m an Animal Activist and Animal
                 Psychic, infusing empathy and insight into my work, promoting a
                 holistic approach to innovation.
               </p>

@@ -50,7 +50,7 @@ const Skills = () => {
         <Skill
           name="CRM"
           x="-20vw"
-          y="-15vw"
+          y="-20vw"
         />
         <Skill name="B2B" x="-35vw" y="-5vw" />
         <Skill name="B2G" x="32vw" y="-5vw" />

@@ -20,8 +20,8 @@ const FeaturedProject = ({ title, summary, img, link }) => {
     >
       <div
         className="absolute top-0 -right-3 -z-10 w-[101%] h-[103%] rounded-[2.5rem] bg-dark dark:bg-light
-    rounded-br-3xl xs:-right-2 sm:h-[102%] xs:w-full xs:rounded-[1.5rem]
-    "
+        rounded-br-3xl xs:-right-2 sm:h-[102%] xs:w-full xs:rounded-[1.5rem]
+      "
       />
       <Link
         href={link}
@@ -92,7 +92,7 @@ const Project = ({ title, img, link }) => {
         <FramerImage
           src={img}
           alt={title}
-          width={500}
+          width={400}
           height={400}
           whileHover={{ scale: 1.05 }}
           transition={{ duration: 0.2 }}
@@ -129,15 +129,36 @@ const Projects = () => {
   const { data: meetData, error: meetError } = useSWR('api/droneMeet', fetcher);
 
   if (droneError || meetError) {
-    return <div>Error loading data</div>;
+    return (
+      <div>
+        <AnimatedText
+          text="Loading"
+          className="mt-8 mb-2 lg:!text-4xl sm:mb-8 sm:!text-4xl xs:!text-4xl"
+        />
+        <div className="flex justify-center items-center items-center p-4">
+          <div className="animate-spin rounded-full h-14 w-14 border-b-4 border-emerald-500" />
+        </div>
+      </div>
+    );
   }
 
   if (!droneData || !meetData) {
-    return <div>Loading...</div>;
+    return (
+      <div>
+        <AnimatedText
+          text="Loading"
+          className="mt-8 mb-2 lg:!text-4xl sm:mb-8 sm:!text-4xl xs:!text-4xl"
+        />
+        <div className="flex justify-center items-center items-center p-4">
+          <div className="animate-spin rounded-full h-14 w-14 border-b-4 border-emerald-500" />
+        </div>
+      </div>
+    );
   }
 
   const mappedDrones = droneData.drone;
   const mappedDronesMeet = meetData.droneMeet;
+
   return (
     <>
       <Head>
@@ -158,13 +179,14 @@ const Projects = () => {
           <div className="grid grid-cols-12 gap-24 gap-y-32 xl:gap-x-16 lg:gap-x-8 md:gap-y-24 sm:gap-x-0">
             <div className="col-span-12">
               {mappedDrones.map((drone) => (
-              <FeaturedProject
-                key={drone.id}
-                title={drone.title}
-                summary={drone.info}
-                img={drone.image}
-                link={drone.link}
-              />))}
+                <FeaturedProject
+                  key={drone.id}
+                  title={drone.title}
+                  summary={drone.info}
+                  img={drone.image}
+                  link={drone.link}
+                />
+              ))}
             </div>
             <div className="col-span-12 sm:col-span-12 flex flex-row sm:flex-wrap ">
               {mappedDronesMeet.map((droneMeet) => (

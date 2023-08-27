@@ -39,7 +39,7 @@ export default function Home() {
                 xl:!text-5xl lg:!text-left lg:!text=6xl md:!text-5xl sm:!text-3xl
                 "
               />
-              <p className="my-4 text-base lg:!text-left font-medium md:text-sm sm:text-xs">
+              <p className="my-2 text-base lg:!text-left font-medium md:text-sm sm:text-xs">
                 Accomplished Aerospace Engineer, UAV Test Pilot, and
                 compassionate advocate, shaping skies and souls. 4+ years
                 designing, navigating regulations, and fostering innovation,
